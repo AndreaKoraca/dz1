@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        
+
+        .naslov{
+            background-color: red;
+            color: white;
+            margin: 0px;
+            width: 100%;
+            text-align: center;
+            height: 6vh;
+            overflow: hidden;
+        }
+
+        .naslov h1{
+            margin: 0 auto;
+        }
+
+        :root{
+            --width:800px;
+            --height:550px;
+        }
+        #galerija{
+            width:var(--width);
+            height:var(--height);
+            overflow:hidden;
+            position: relative;
+            margin: 20px auto 0px auto;
+            display: flex;
+            flex-direction: row;
+            
+        }
+        #galerija>img{
+            width:var(--width);
+            height:var(--height);  
+            position:absolute; 
+            top:100px;
+            left:0px;  
+            z-index:-10;
+            display:none;
+            object-fit:cover;
+        }
+        #galerija label{
+            display:block;
+            width:100px;
+            height:60px;
+            position:relative;
+            margin:0px auto 0px auto
+        }
+
+        #galerija label img{
+            width:100px;
+            height:60px;
+            position:absolute;
+            border:2px solid white;
+            border-radius:10px;
+        }
+        #galerija input{
+            display:none;
+        }
+
+        #galerija input:checked +img{
+            display:block;
+        }
+        #galerija label p{
+            position:absolute;
+            background-color: red;
+            color:white;
+            text-align:center;
+            width:100%;
+        }
+
+        .tablica{
+            border: 1px solid black;
+            width: 800px;
+            margin: 20px auto 0 auto;
+            
+        }
+
+        table{
+            width: 800px;
+            position: relative; 
+            border-collapse: collapse;
+        }
+
+        tr{
+            height: 80px;
+        }
+
+        td{
+            border: 1px solid black;
+            text-align: center;
+
+        }
+
+        .prvi{
+            height: 50px;
+            background-color: lightcoral;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="naslov">
+        <h1>VERN' SPORT</h1>
+    </div>
+
+    <div class="container">
+        <div id="galerija">
+            <input type="radio" name="sport" id="odbojka">
+            <img src="slike/odbojka.jpg" alt="">
+            <label for="odbojka">
+                <img src="slike/odbojka.jpg" alt="">
+                <p>Odbojka</p>
+            </label>
+    
+            <input type="radio" name="sport" id="futsal">
+            <img src="slike/futsal.jpg" alt="">
+            <label for="futsal">
+                <img src="slike/futsal.jpg" alt="">
+                <p>Futsal</p>
+            </label>
+    
+            <input type="radio" name="sport" id="kosarka">
+            <img src="slike/kosarka.jpeg" alt="">
+            <label for="kosarka">
+                <img src="slike/kosarka.jpeg" alt="">
+                <p>Košarka</p>
+            </label>
+    
+            <input type="radio" name="sport" id="rukomet">
+            <img src="slike/rukomet.jpg" alt="">
+            <label for="rukomet">
+                <img src="slike/rukomet.jpg" alt="">
+                <p>Rukomet</p>
+            </label>
+    
+            <input type="radio" name="sport" id="vatrpolo">
+            <img src="slike/vatrpolo.jpg" alt="">
+            <label for="vatrpolo">
+                <img src="slike/vatrpolo.jpg" alt="">
+                <p>Vatrpolo</p>
+            </label>
+    
+            <input type="radio" name="sport" id="stolni">
+            <img src="slike/stolni.jpg" alt="">
+            <label for="stolni">
+                <img src="slike/stolni.jpg" alt="">
+                <p>Stolni tenis</p>
+            </label>
+        </div>
+
+        <div class="tablica">
+            <table>
+                <tr class="prvi">
+                    <td>SPORT</td>
+                    <td>CENTAR</td>
+                    <td>VRIJEME</td>
+                </tr>
+                
+
+                <tr>
+                    <td>ODBOJKA</td>
+                    <td>Kineziološki fakultet,<br> Horvaćanski zavoj 15</td>
+                    <td>Utorkom: 21:00-22:30 <br> (mala dvorana E)</td>
+                </tr>
+
+                <tr>
+                    <td>FUTSAL</td>
+                    <td>Prirodoslovna škola Vladimira Preloga, <br> Ulica grada Vukovara 269</td>
+                    <td>Ponedjeljkom: 19:30 – 20:30</td>
+                </tr>
+
+                <tr>
+                    <td>KOŠARKA</td>
+                    <td>Kineziološki fakultet,<br>Horvaćanski zavoj 15</td>
+                    <td>Utorkom:21:00-22:30 <br>(mala dvorana D)</td>
+                </tr>
+
+                <tr>
+                    <td>RUKOMET</td>
+                    <td>SPATRA GYM <br> Riječka ulica 10 (Rotor)</td>
+                    <td>21:30 – 22:30 <br> (velika dvorana)</td>
+                </tr>
+                <tr>
+                    <td>VATRPOLO</td>
+                    <td>Bazen Utrina,<br> Kombolova ulica 4a</td>
+                    <td>Pon – Pet: 06:00 – 22:00 <br>(pruge građanstvo)</td>
+                </tr>
+                <tr>
+                    <td>STOLNI TENIS</td>
+                    <td>FIRST FITNESS & SQUASHTOWER <br>Zavrtnica 17</td>
+                    <td>Radnim danom: 7:00 – 14:00 <br> (minimalno 2 osobe)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+   
+    
+</body>
+</html>

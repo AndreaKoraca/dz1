@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*nav*/
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: red;
+            height: 6vh;
+            }
+          
+        li {
+            float: right;
+            }
+          
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            height: 100%;
+            }
+          
+
+        li a:hover {
+            background-color: white;
+            color: red;
+            }
+
+        .active {
+            background-color: #04AA6D;
+            }
+
+        img{
+            height: 45px;
+            }
+
+        .container{
+            height: 93vh;
+        }
+
+
+        /*slider*/
+
+        :root{
+            --width:100%;
+            --height:600px;
+        }
+    
+        #galerija{
+            width:var(--width);
+            height:var(--height);
+            position:relative;
+            overflow: hidden;
+            margin:0 auto;
+            }
+
+        #galerija .item{
+            width:var(--width);
+            height:var(--height);
+            position:absolute;
+            left:var(--width);
+            }
+
+        #galerija .item img{
+            width:var(--width);
+            height:var(--height);
+            z-index:1;
+            position:absolute;
+            }
+
+        #galerija .item p{
+            position:absolute;
+            font-size:40px;
+            margin:50px;
+            color:white;
+            text-shadow:1px 1px 0 black, 0px 0px 30px orange,0px 0px 30px orange,0px 0px 30px orange,0px 0px 30px orange;
+            transform: rotate(30deg);
+            z-index:2;
+            }
+
+        
+       @keyframes ulazak {
+            0%{
+                left:var(--width);
+                }
+
+            5.56%{
+                left:0px;
+                }
+
+            16.67% {
+                left:0px;
+                }
+
+            22.22%{
+                left:calc(-1 * var(--width));
+                }
+
+            100%{
+                left:calc(-1 * var(--width));
+                }
+            
+        }
+        #galerija .item:nth-child(1){
+            animation:ulazak 18s 0s normal infinite backwards;
+        }
+        #galerija .item:nth-child(2){
+            animation:ulazak 18s 3s normal infinite backwards;
+        }
+        #galerija .item:nth-child(3){
+            animation:ulazak 18s 6s normal infinite backwards;
+        }
+        #galerija .item:nth-child(4){
+            animation:ulazak 18s 9s normal infinite backwards;
+        }
+        #galerija .item:nth-child(5){
+            animation:ulazak 18s 12s normal infinite backwards;
+        }
+        #galerija .item:nth-child(6){
+            animation:ulazak 18s 15s normal infinite backwards;
+        }
+
+        /*main*/
+
+        .vern{
+            
+            overflow: hidden;
+        }
+
+        .tekst{
+            text-align: justify;
+        }
+
+        .tekst a{
+            color: red;
+        }
+
+        
+        .slika{
+            float:right;
+            width:200px;
+            height: 215px;
+            margin-left:10px;
+            padding:10px;
+            background-color:red;
+            text-align:center;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .slika img{
+            width:100%;
+            height: 180px;
+        }
+
+        .naslov{
+            display:block;  
+            width:100%;
+            height: 50px;
+            position:relative;
+            border-top: 10px solid red;
+            border-bottom: 10px solid red;
+        }
+
+        .naslov h1{
+            margin-top: 6px;
+        }
+
+        /*studij*/
+
+        .studiji2 p{
+            display: none;
+        }
+
+        .studiji2 input{
+            display: none;
+        }
+
+        .studiji2 label{
+            display: block;
+            height: 50px;
+            width: 100%;
+            padding-top: 25px;
+            margin-bottom: 0px;
+            
+        }
+
+        label:hover{
+            display:block;
+            background-color: red;
+            color: white;
+            overflow: hidden;
+        }
+
+        #prvi:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #drugi:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #treci:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #cetvrti:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #peti:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #sesti:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #sedmi:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #osmi:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #deveti:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        #deseti:checked+p{
+            display:block;
+            margin-left: 40px;
+        }
+
+        /*kontakt*/
+
+        .kontakt{
+            background-color: red;
+            color: white;
+            text-align: center;
+            margin-top: 150px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <img src="slike/logo.jpg" alt="">
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="sport.html">Sport</a></li>
+            <li><a href="#studiji">Studiji</a></li>
+            <li><a href="#vern">O nama</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+
+        <div id="galerija">
+            <div class="item">
+                <img src="slike/slider1.jpeg" alt="">        
+            </div>
+    
+            <div class="item">
+                <img src="slike/slider2.jpg" alt="">  
+            </div>
+    
+            <div class="item">
+                <img src="slike/slider3.jpg" alt="">            
+            </div>
+
+            <div class="item">
+                <img src="slike/slider4.jpg" alt="">          
+            </div>
+
+            <div class="item">
+                <img src="slike/slider5.jpg" alt="">           
+            </div>
+
+            <div class="item">
+                <img src="slike/slider6.jpg" alt="">            
+            </div>
+        </div>
+
+        <div class="vern">
+            <div class="naslov"> 
+                <a id="vern"><h1>O nama</h1> </a>
+            </div>
+            
+            <div class="tekst">
+                <div class="slika">
+                    <img src="slike/ulaz.jpg" alt=""> 
+                    <p>Ulaz u VERN’</p>
+                </div>
+                
+                <p><b>VERN’ </b> je akademski razvoj započeo davne 1994. godine kao <i> prvo hrvatsko privatno poslovno visoko učilište</i>, koje je tijekom svoje transformacije u respektabilnu akademsku instituciju u hrvatsko visoko obrazovanje unijelo poduzetnički način razmišljanja i poduzetničku poslovnu kulturu. <b>VERN’ </b> danas izvodi ukupno 10 studija na prijediplomskoj i 7 na diplomskoj razini, na kojima studira više od 1.800 studenata, dok <b>VERN’ova</b> mreža alumnija broji više od 6.000 članova.</p>
+                <p>Organizacija i implementacija različitih projekata jedna je od ključnih konkurentskih odrednica naše institucije. Projekti na kojima sudjelujemo, u suradnji s različitim dionicima iz obrazovanja i gospodarstva, pružaju nam kvalitetne i realne spoznaje o trendovima u današnjem društvu. U skladu s višegodišnjom orijentacijom i tradicijom obrazovanja stručnjaka za potrebe gospodarskog razvoja u europskom i globalnom kontekstu,<b>  VERN’</b> pokreće niz inicijativa za snažniju suradnju između akademskog i gospodarskog sektora objedinjenih u konceptu <a target="_blank" href="https://vern.hr/educationmeetsbusiness/">#EducationmeetsBusiness</a> </p>
+                <p><b> VERN’</b> je strateški opredijeljen za ostvarivanje najviših nacionalnih i međunarodnih normi i standarda kvalitete u visokom obrazovanju i poslovanju. Kultura kvalitete je zajednička vrijednost i odgovornost svih dionika ove institucije i iskazuje se našom politikom kvalitete.</p>
+            </div>
+            
+        </div>
+
+        <div class="studiji">
+            <div class="naslov"> 
+                <a id="studiji"><h1>Studiji</h1> </a>
+            </div>
+
+            <div class="studiji2">
+                <label for="prvi"><h2>Ekonomija poduzetništva</h1></label>  
+                <input type="radio" name="grad" id="prvi">
+                <p>Studij te priprema za ono što te očekuje u stvarnom svijetu. Onom poslovnom, naravno.<br><br>
+                    Tijekom studija osposobit ćemo te za široki raspon poslova – <b>od karijere u velikim korporativnim sustavima, do pokretanja vlastitog startupa ili vođenja obiteljskog poduzeća.</b> <br><br>
+                    <b>Poduzetništvo</b> nikada nije bilo uzbudljivije. Generacijama koje dolaze, nove se mogućnosti rađaju svaki dan. Nauči prepoznavati stvarne poslovne prilike i uzmi posao u svoje ruke.</p><hr><br>
+                    
+                <label for="drugi"><h2>Turizam -turistički i hotelski menadžment</h2></label>  
+                <input type="radio" name="grad" id="drugi">
+                <p>Danas kada su i najudaljenije destinacije tek na nekoliko sati leta, a samo jedan loš review može napraviti trajnu štetu nekoj destinaciji, s izazovima turizma možemo se nositi jedino uz pomoć struke i znanja. Zbog toga je i cilj ovog studija vrhunsko obrazovanje stručnjaka iz područja <i> destination</i> i <i>hospitality</i> menadžmenta. <br><br>
+                    Značaj turizma za Hrvatsku nije potrebno naglašavati jer turizam u Hrvatskoj čini četvrtinu BDP-a. Ljepotu i znamenitosti već imamo. Trebamo stručnjake. <br><br>
+                    Postani dio generacije koja će turizam podići na još višu razinu. Studiraj budućnost već danas. Studiraj na VERN’u.</p> <hr> <br>
+
+                <label for="treci"><h2>Filmsko, televizijsko i multimedijsko oblikovanje</h2></label>  
+                <input type="radio" name="grad" id="treci">
+                <p>Filmsko, tehničko i multimedijsko obrazovanje razvija tehničke, kreativne i analitičke vještine rada u audiovizualnim industrijama <br><br>
+                    Proučavanjem reižije, scenaristike, montaže, kamere i zvuka, uz teorijske kurseve o industriji i analizi medija naučiti ćete sve što treba za izdominirat ovo područje rada. <br><br>
+                    Televizijsko obrazovanje se fokusira na produkciju emisija i serija, dok multimedijsko uključuje digitalne medije poput video igra, web dizajna i animacije. Ovo obrazovanje priprema studente za dinamički razvoj tehnologij i kreativnih industrija</p> <hr><br>
+
+                <label for="cetvrti"><h2>Transmedijska dramaturgija</h2></label>  
+                <input type="radio" name="grad" id="cetvrti">
+                <p>Studij Transmedijske dramaturgije koncipiran je kao interdisciplinarni obrazovni program koji objedinjuje različite tipove dramaturških praksi i stručnih znanja neophodnih za oblikovanje narativnih medijskih sadržaja te njihovo (trans)medijsko pozicioniranje unutar zabavnih i kreativnih industrija. <br><br>
+                    Studij kombinira raznovrsna dramaturško-scenaristička znanja i vještine sa specifičnim medijskim i kulturološkim sadržajima, te organizacijskim vještinama i ekonomsko-pravnim spoznajama (marketing, financiranje i intelektualno vlasništvo), koje polaznicima studija omogućuju sveobuhvatnije razumijevanje profesionalnog, društvenog i gospodarskog konteksta industrije zabave i integralno shvaćenih kreativnih industrija. <br><br>
+                    Praksa transmedijskog storytellinga usmjerena je na kreiranje složenih narativnih „svjetova“ s mnoštvom razrađenih likova, paralelnih i pobočnih priča, koji zbog svoje kompleksnosti, detaljne situacijske razrađenosti i kontekstualne sveobuhvatnosti zadovoljavaju kriterije komplementarnog pripovijedanja, ali i poslovne eksploatacije, na različitim komunikacijskim platformama. </p><hr> <br>
+
+                <label for="peti"><h2>Cyber komunikacije i znanost o mreži</h2></label>  
+                <input type="radio" name="grad" id="peti">
+                <p><i>„Tehnologija je zauvijek promijenila način na koji komuniciramo, kao i načine kojima se povezujemo s ostatkom svijeta i međusobno.“ Duncan Cawdell</i> <br><br>
+                    Ovaj studij te osposobljava za poslovanje u svijetu novih komunikacija, odnosno svijetu digitalnih komunikacija. Društvene mreže, digitalni marketing, blogovi, osobni brending, influencer marketing ili gerila u online okruženju bit će teme kojima ćeš se baviti na ovom studiju. Studiraj budućnost već sada. Studiraj na VERN’u.</p><hr> <br>
+
+                <label for="sesti"><h2>Odnosi s javnošću i studij medija</h2></label>  
+                <input type="radio" name="grad" id="sesti">
+                <p>Odnosi s javnošću treća su najtraženija profesija u područjima kreativnih i medijskih djelatnosti, a povećana potražnja za stručnjacima za odnose s javnošću trend je koji se očekuje i u bližoj budućnosti. <br><br>
+                    Odnosi s javnošću nose odgovornost prenošenja bitnih informacija između organizacija i javnosti. Nikada ranije protok informacija nije bio brži, niti poslovno okruženje dinamičnije nego danas. Zbog toga poslodavci prednost daju kandidatima sa završenim stručnim studijem. <br><br>
+                    Tvoje mjesto na studiju te čeka. Studiraj budućnost već danas. </p> <hr><br>
+
+                <label for="sedmi"><h2>Novinarstvo</h2></label>  
+                <input type="radio" name="grad" id="sedmi">
+                <p>Želiš biti lice koje ljudi prepoznaju s TV ekrana ili reporter koji građane izvještava u kriznim situacijama? Ili ti se više sviđa biti glas koji ljudi prepoznaju s radija? Želiš li nalaziti izvore i pratiti tragove sve dok te priča sama ne odvede do istine? Ili jednostavno želiš iskoristiti sve mogućnosti online platformi i izvještavati u real-timeu? <br><br>
+                    Studij te priprema za niz novinarskih poslova, od tradicionalnih medija poput televizija ili radija, do suvremenih digitalnih medija koji svakoga dana unose nova pravila i dinamiku u struku. Studiraj budućnost već danas. Studiraj na VERN’u. </p> <hr><br>
+
+                <label for="osmi"><h2>Internet stvari(Internet of Things - IoT)</h2></label>  
+                <input type="radio" name="grad" id="osmi">
+                <p>Želiš li postati IoT developer i sudjelovati u razvoju tehnologije koja mijenja način na koji komuniciramo sa svijetom oko sebe? Znaš li da gotovo svaki dan koristimo IoT a da toga nismo ni svjesni?! Koristimo navigaciju, plaćamo beskontaktno putem mobitela ili primjerice rezerviramo parking putem app-a. <br><br>
+                    Zaroni u svijet IoT-a i razvijaj stvari poput pametnih televizora, fitness narukvica i pametnih satova ili autonomnih vozila.</p> <hr><br>
+
+                <label for="deveti"><h2>Poslovna informatika</h2></label>  
+                <input type="radio" name="grad" id="deveti">
+                <p>What’s the P.O.I.N.T.? <br> Znaš li da svake godine samo u EU nedostaje stotine tisuća programera, a da je prosječna plaća u IT industriji u Hrvatskoj 60% veća od prosječne plaće u državi?<br><br>
+                    Neovisno o tome želiš li karijeru graditi unutar kompanije ili kao freelance developer, te naginješ li frontendu, backendu ili fullstack developmentu, ovaj će se studij pobrinuti da tvoji skillovi odgovaraju potrebama tržišta. <br><br>
+                    Ključna prednost ovog studija je da ćeš osim programiranja naučiti i business. Razumjet ćeš kako primijeniti informatička znanja u rješavanju poslovnog problema, a poslovna znanja za osnivanje i vođenje vlastitog startupa. <br><br>
+                    That’s the P.O.I.N.T. </p><hr> <br>
+
+                <label for="deseti"><h2>Tehnički menadžment</h2></label>  
+                <input type="radio" name="grad" id="deseti">
+                <p>Imaš li ideju koliki je potencijal tehničkog menadžmenta? Prema procjenama Project Management Institutea, do 2030. godine ovaj sektor će generirati više od 2 milijuna radnih mjesta svake godine. <br><br>
+                    Projektni menadžeri, tehnički direktori, projektni inženjeri i proizvodni menadžeri su samo neki od poslova s najvećom potražnjom u ovom sektoru. Pritom budući stručnjaci s područja tehničkog menadžmenta predstavljaju idealan “match” znanja i vještina za proizvodne i istraživačke pogone kompanija kao što su BMW, Siemens, Philips, Google, Microsoft, IBM, Rimac, Bosch…</p> <hr><br>
+            </div>
+        </div>
+
+        <div class="kontakt">
+            <h1><a id="kontakt">Sveučilište VERN’</a></h1>
+            <p><b>Adresa:</b>  Palmotićeva ulica 82/1, 10000 Zagreb</p>
+            <p><b>Telefon:</b> +385 (0)1 48 81 820</p>
+            <p><b>Telefon:</b> +385 (0)1 48 81 830</p>
+            <p><b>OIB:</b> 22341026596</p>
+            <p><b> IBAN:</b> HR8124840081135043227</p>
+            <p><b>BIC (SWIFT):</b> RZBHHR2X</p>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>
